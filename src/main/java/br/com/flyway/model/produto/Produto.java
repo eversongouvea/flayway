@@ -9,8 +9,12 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
+import com.fasterxml.jackson.annotation.JsonInclude;
+import com.fasterxml.jackson.annotation.JsonInclude.Include;
+
 import lombok.Data;
 
+@JsonInclude(Include.NON_NULL)
 @Data
 @Entity
 @Table(name = "produto",schema = "produto")
@@ -25,5 +29,8 @@ public class Produto {
 	
 	@Enumerated(EnumType.STRING)
 	private Categoria categoria;
+	
+	@Column(length=50,nullable = true)
+	private String descricao;
 	
 }

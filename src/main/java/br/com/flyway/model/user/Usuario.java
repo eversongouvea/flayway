@@ -12,9 +12,13 @@ import javax.persistence.JoinColumn;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
+import com.fasterxml.jackson.annotation.JsonInclude;
+import com.fasterxml.jackson.annotation.JsonInclude.Include;
+
 import br.com.flyway.model.produto.Produto;
 import lombok.Data;
 
+@JsonInclude(Include.NON_NULL)
 @Data
 @Table(name="usuario",schema="usuario" )
 @Entity
